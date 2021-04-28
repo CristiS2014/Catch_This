@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Box
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Pereti
   - Fundal
   - Destructibil
-  - 
+  - Player
   - 
   - 
   - 
@@ -46,6 +48,12 @@ TagManager:
     locked: 0
   - name: Pereti
     uniqueID: 3983529413
+    locked: 0
+  - name: Player
+    uniqueID: 110174449
+    locked: 0
+  - name: Bomb
+    uniqueID: 474847063
     locked: 0
   - name: Default
     uniqueID: 0
