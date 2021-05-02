@@ -49,10 +49,10 @@ public class Bomb_Explosion : MonoBehaviour
 				if (collider)
 				{
 					foundBlockOrWall = collider.tag == "Wall" || collider.tag == "Box";
-					//if (collider.tag == "Box")
-					//{
-						//Destroy(collider.gameObject);
-					//}
+					if (collider.tag == "Box")
+					{
+						Destroy(collider.gameObject);
+					}
 					if (foundBlockOrWall)
 					{
 						break;
