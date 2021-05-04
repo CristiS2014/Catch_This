@@ -8,6 +8,8 @@ public class IntroScript : MonoBehaviour
     public GameObject Menu, Logo;
     float intro_countdown;
 
+    [SerializeField] private string versionName = "0.1";
+
     void Start()
     {
         intro_countdown = 2f;
@@ -19,11 +21,18 @@ public class IntroScript : MonoBehaviour
     {
         if (intro_countdown <= 0)
         {
+            PhotonNetwork.ConnectUsingSettings(versionName);
             Logo.SetActive(false);
             Menu.SetActive(true);
             gameObject.GetComponent<IntroScript>().enabled = false;
         }
         else
             intro_countdown -= Time.deltaTime;
+    }
+
+    private void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby(TypedLobby.Default);
+        Debug.Log("Connected to master");
     }
 }
