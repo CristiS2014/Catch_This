@@ -8,6 +8,13 @@ public class CodeMessage : MonoBehaviour
 {
     public Text readName;
     public GameObject info;
+
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+    public List<GameObject> playerNames;
+    public string leaderSymbol = "Leader: ";
     public void showMessage()
     {
         /*
@@ -37,6 +44,7 @@ public class CodeMessage : MonoBehaviour
         GameObject.Find("CanvasUI").SetActive(false);
         GameObject.Find("EventSystemUI").SetActive(false);
         MainScript.leader = false;
+
     }
 
     private void OnPhotonJoinRoomFailed()

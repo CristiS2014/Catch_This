@@ -33,6 +33,12 @@ public class IntroScript : MonoBehaviour
     private void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
+        PhotonNetwork.playerName = "TestName";
         Debug.Log("Connected to master");
+    }
+
+    private void OnDisconnected()
+    {
+        // TODO -> daca mesaj eroare daca nu ma pot conecta la sv (ex nu am net)
     }
 }

@@ -23,6 +23,7 @@ public class NameMessage : MonoBehaviour
         GameObject.Find("CanvasUI").SetActive(false);
         GameObject.Find("EventSystemUI").SetActive(false);
         SceneManager.LoadSceneAsync("Lobby", LoadSceneMode.Additive);
+
     }
 
     public void CreateGame()
