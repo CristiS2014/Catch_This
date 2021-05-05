@@ -10,6 +10,7 @@ public class CodeMessage : MonoBehaviour
     public GameObject info;
     public void showMessage()
     {
+        /*
         if (readName.text != "SALUT")
             info.SetActive(true);
         else
@@ -19,5 +20,28 @@ public class CodeMessage : MonoBehaviour
             GameObject.Find("EventSystemUI").SetActive(false);
             MainScript.leader = false;
         }
+        */
+    }
+
+    public void JoinGame()
+    {
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.maxPlayers = 4;
+        PhotonNetwork.JoinRoom(readName.text.ToUpper());
+    }
+
+    private void OnJoinedRoom()
+    {
+        Debug.Log("Joined room " + PhotonNetwork.room.Name);
+        SceneManager.LoadScene("Lobby", LoadSceneMode.Additive);
+        GameObject.Find("CanvasUI").SetActive(false);
+        GameObject.Find("EventSystemUI").SetActive(false);
+        MainScript.leader = false;
+    }
+
+    private void OnPhotonJoinRoomFailed()
+    {
+        Debug.Log("Join room failed");
+        info.SetActive(true);
     }
 }
