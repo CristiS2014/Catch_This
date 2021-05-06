@@ -1,30 +1,26 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class IntroScript : MonoBehaviour
+public class StartGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject Menu, Logo;
     float intro_countdown;
-
+    private bool isConnected = false;
     [SerializeField] private string versionName = "0.1";
 
     void Start()
     {
         intro_countdown = 2f;
-        Logo.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (intro_countdown <= 0)
+        if (intro_countdown <= 0 && !isConnected)
         {
             PhotonNetwork.ConnectUsingSettings(versionName);
-            Logo.SetActive(false);
-            Menu.SetActive(true);
-            gameObject.GetComponent<IntroScript>().enabled = false;
+            isConnected = true;
         }
         else
             intro_countdown -= Time.deltaTime;
@@ -35,6 +31,7 @@ public class IntroScript : MonoBehaviour
         PhotonNetwork.JoinLobby(TypedLobby.Default);
         PhotonNetwork.playerName = "";
         Debug.Log("Connected to master");
+        SceneManager.LoadScene(1);
     }
 
     private void OnDisconnected()

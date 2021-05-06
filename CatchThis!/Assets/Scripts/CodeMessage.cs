@@ -37,7 +37,6 @@ public class CodeMessage : MonoBehaviour
         SceneManager.LoadScene("Lobby", LoadSceneMode.Additive);
         GameObject.Find("CanvasUI").SetActive(false);
         GameObject.Find("EventSystemUI").SetActive(false);
-        MainScript.leader = false;
 
     }
 

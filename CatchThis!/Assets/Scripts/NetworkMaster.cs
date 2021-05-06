@@ -11,7 +11,6 @@ public class NetworkMaster : Photon.PunBehaviour
     public int maxNrPlayers = 4;
     private void Awake()
     {
-        Debug.Log(PhotonNetwork.isMasterClient);
         for (int i = 0; i < maxNrPlayers && i < PhotonNetwork.playerList.Length; i++)
         {
             if (PhotonNetwork.playerList[i].IsMasterClient || PhotonNetwork.playerList.Length == 1)

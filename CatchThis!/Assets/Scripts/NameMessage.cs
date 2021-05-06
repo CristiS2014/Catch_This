@@ -11,20 +11,33 @@ public class NameMessage : MonoBehaviour
 
     const string roomNameChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const int roomNameLength = 4;
+
+    public GameObject startMenu;
+    public GameObject connectionMenu;
+    public GameObject createGameButton;
+    public GameObject joinGameButton;
+    public GameObject confirmUsernameButton;
+    public InputField nameInputField;
+    private void Awake()
+    {
+        if (PhotonNetwork.playerName != "")
+        {
+            connectionMenu.SetActive(true);
+            startMenu.SetActive(false);
+            nameInputField.text = PhotonNetwork.playerName;
+            createGameButton.SetActive(true);
+            joinGameButton.SetActive(true);
+            confirmUsernameButton.SetActive(false); 
+            info.gameObject.SetActive(true);
+            info.text = "Your username is now " + PhotonNetwork.playerName;
+        }
+    }
+
     public void showMessage()
     {
         info.gameObject.SetActive(true);
         info.text = "Your username is now " + readName.text;
         PhotonNetwork.playerName = readName.text;
-        MainScript.nickname = readName.text;
-    }
-    public void setLeader()
-    {
-        MainScript.leader = true;
-        GameObject.Find("CanvasUI").SetActive(false);
-        GameObject.Find("EventSystemUI").SetActive(false);
-        SceneManager.LoadSceneAsync("Lobby", LoadSceneMode.Additive);
-
     }
 
     public void CreateGame()
@@ -36,5 +49,6 @@ public class NameMessage : MonoBehaviour
         }
         Debug.Log("Room Name " + roomName);
         PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = 4 }, null);
+        SceneManager.LoadScene(2);
     }
 }
