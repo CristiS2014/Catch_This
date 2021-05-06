@@ -1209,6 +1209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ab33141e39e9498d012abf925545f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectlevelButton: {fileID: 899466803}
+  playButton: {fileID: 1644420456}
   leaderSymbol: 'Leader: '
   playerNames:
   - {fileID: 1191852819}

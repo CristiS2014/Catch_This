@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class NetworkMaster : Photon.PunBehaviour
 {
-
+    public GameObject selectlevelButton;
+    public GameObject playButton;
     public string leaderSymbol = "Leader: ";
     public List<GameObject> playerNames = new List<GameObject>(4);
     public int maxNrPlayers = 4;
@@ -63,7 +64,8 @@ public class NetworkMaster : Photon.PunBehaviour
     {
         if (PhotonNetwork.isMasterClient || PhotonNetwork.playerList.Length == 1)
         {
-
+            selectlevelButton.SetActive(true);
+            playButton.SetActive(true);
         }
     }
 
