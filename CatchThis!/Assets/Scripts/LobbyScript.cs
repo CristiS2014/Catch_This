@@ -15,16 +15,9 @@ public class LobbyScript : MonoBehaviour
     {
         if (MainScript.leader)
         {
-            player1.text += " " + MainScript.nickname;
             button1.SetActive(true);
             button2.SetActive(true);
         }
-        else if (!MainScript.leader && player2.text == "")
-            player2.text = MainScript.nickname;
-        else if (!MainScript.leader && player3.text == "")
-            player3.text = MainScript.nickname;
-        else if (!MainScript.leader && player4.text == "")
-            player4.text = MainScript.nickname;
         main = GameObject.Find("MainLobby");
         level = "Level 1";
         main.transform.Find(level).gameObject.SetActive(true);

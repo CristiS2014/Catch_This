@@ -33,7 +33,7 @@ public class IntroScript : MonoBehaviour
     private void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
-        PhotonNetwork.playerName = "TestName";
+        PhotonNetwork.playerName = "";
         Debug.Log("Connected to master");
     }
 

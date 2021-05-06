@@ -15,6 +15,7 @@ public class NameMessage : MonoBehaviour
     {
         info.gameObject.SetActive(true);
         info.text = "Your username is now " + readName.text;
+        PhotonNetwork.playerName = readName.text;
         MainScript.nickname = readName.text;
     }
     public void setLeader()
@@ -34,6 +35,6 @@ public class NameMessage : MonoBehaviour
             roomName += roomNameChars[Random.Range(0, roomNameChars.Length - 1)];
         }
         Debug.Log("Room Name " + roomName);
-        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { maxPlayers = 4 }, null);
+        PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = 4 }, null);
     }
 }
