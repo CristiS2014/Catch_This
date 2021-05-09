@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour
+using UnityEngine.UI;
+public class PlayerMovement : Photon.MonoBehaviour
 {
     public int movementspeed = 2;
+    public PhotonView phView;
+
     // Use this for initialization
     void Start()
     {
@@ -13,6 +15,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        if (phView.isMine)
+        {
+            CheckInput();
+        }
+    }
+
+    private void CheckInput()
     {
         if (Input.GetKey(KeyCode.A))
         {
