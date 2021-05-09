@@ -72,7 +72,7 @@ public class NetworkMaster : Photon.PunBehaviour
     [PunRPC]
     public void SetSpawnPoint(string spawnPointName)
     {
-        Debug.Log("Spawn Point: " + spawnPointName);
+        Debug.Log("Spawn Point Name: " + spawnPointName);
         GameInfo.spawnPointName = spawnPointName;
     }
 
