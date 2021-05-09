@@ -34,7 +34,7 @@ public class CodeMessage : MonoBehaviour
     private void OnJoinedRoom()
     {
         Debug.Log("Joined room " + PhotonNetwork.room.Name);
-        SceneManager.LoadScene("Lobby", LoadSceneMode.Additive);
+        SceneManager.LoadScene(2);
         GameObject.Find("CanvasUI").SetActive(false);
         GameObject.Find("EventSystemUI").SetActive(false);
 
