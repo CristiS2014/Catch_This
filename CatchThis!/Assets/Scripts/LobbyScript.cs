@@ -88,9 +88,11 @@ public class LobbyScript : Photon.MonoBehaviour
         for (int i = 0; i < PhotonNetwork.playerList.Length; i++)
         {
             //phView.RPC("SetSpawnPoint", )
-            phView.RPC("SetSpawnPoint", PhotonNetwork.playerList[i], availableSpawnPoints[1]);
+            int spawnPointIndex = Random.Range(0, availableSpawnPoints.Count - 1);
+            phView.RPC("SetSpawnPoint", PhotonNetwork.playerList[i], availableSpawnPoints[spawnPointIndex]);
+            availableSpawnPoints.RemoveAt(spawnPointIndex);
         }
-        LoadLevel(levelNo);
+        phView.RPC("LoadLevel", PhotonTargets.All, levelNo);
     }
 
     public void exitLobby()
@@ -102,12 +104,5 @@ public class LobbyScript : Photon.MonoBehaviour
         Debug.Log("Left Room");
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene(1);
-    }
-
-
-    [PunRPC]
-    public void LoadLevel(int levelNo)
-    {
-        SceneManager.LoadScene(levelNo);
     }
 }
