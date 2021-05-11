@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Spate
+    uniqueID: 1159591457
+    locked: 0
   - name: Fundal
     uniqueID: 723174347
     locked: 0
