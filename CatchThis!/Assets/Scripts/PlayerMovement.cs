@@ -6,24 +6,17 @@ public class PlayerMovement : Photon.MonoBehaviour
 {
     public int movementspeed = 2;
     public PhotonView phView;
-    public static int bombsAvailable = 0;
-
-    [SerializeField]
-    private GameObject bombPrefab;
 
     // Use this for initialization
     void Start()
     {
-        if (phView.isMine || !PhotonNetwork.connected)
-        {
-            bombsAvailable = 1;
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (phView.isMine || !PhotonNetwork.connected)
+        if (phView.isMine)
         {
             CheckInput();
         }
@@ -49,16 +42,5 @@ public class PlayerMovement : Photon.MonoBehaviour
         {
             transform.Translate(Vector3.down * movementspeed * Time.deltaTime);
         }
-
-        if (Input.GetKeyDown("space") && bombsAvailable > 0)
-        {
-            DropBomb();
-            bombsAvailable--;
-        }
-    }
-
-    void DropBomb()
-    {
-        Instantiate(bombPrefab, this.gameObject.transform.position, Quaternion.identity);
     }
 }

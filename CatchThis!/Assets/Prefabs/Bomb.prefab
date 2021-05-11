@@ -93,7 +93,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501492230925885353}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -145,8 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cdefedc235ce7a479f84b48de2eab25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider2D: {fileID: 5337157279430461525, guid: 8f1015c819232e84185456223165d47a,
-    type: 3}
+  collider2D: {fileID: 2501492230925885356}
   explosionPrefab: {fileID: 5337157279430461527, guid: 8f1015c819232e84185456223165d47a,
     type: 3}
   explosionRange: 4

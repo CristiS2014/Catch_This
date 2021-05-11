@@ -30,8 +30,6 @@ public class Bomb_Explosion : MonoBehaviour
 		CreateExplosions(Vector2.right);
 		CreateExplosions(Vector2.up);
 		CreateExplosions(Vector2.down);
-		PlayerMovement.bombsAvailable++;
-		Debug.Log(PlayerMovement.bombsAvailable);
 		Destroy(this.gameObject);
 	}
 
@@ -50,8 +48,8 @@ public class Bomb_Explosion : MonoBehaviour
 			{
 				if (collider)
 				{
-					foundBlockOrWall = collider.tag == "Wall" || collider.tag == "Box" || collider.tag == "Player";
-					if (collider.tag == "Box" || collider.tag == "Player")
+					foundBlockOrWall = collider.tag == "Wall" || collider.tag == "Box";
+					if (collider.tag == "Box")
 					{
 						Destroy(collider.gameObject);
 					}
