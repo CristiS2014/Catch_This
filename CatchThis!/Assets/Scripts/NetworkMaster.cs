@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NetworkMaster : Photon.PunBehaviour
@@ -74,6 +75,12 @@ public class NetworkMaster : Photon.PunBehaviour
     {
         Debug.Log("Spawn Point Name: " + spawnPointName);
         GameInfo.spawnPointName = spawnPointName;
+    }
+
+    [PunRPC]
+    public void LoadLevel(int levelNo)
+    {
+        SceneManager.LoadScene(levelNo);
     }
 
 }
