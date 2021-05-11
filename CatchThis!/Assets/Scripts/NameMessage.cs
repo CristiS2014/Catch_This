@@ -49,6 +49,13 @@ public class NameMessage : MonoBehaviour
         }
         Debug.Log("Room Name " + roomName);
         PhotonNetwork.CreateRoom(roomName, new RoomOptions() { MaxPlayers = 4 }, null);
+        //SceneManager.LoadScene(2);
+    }
+
+    private void OnJoinedRoom()
+    {
+        Debug.Log("Joined room " + PhotonNetwork.room.Name);
         SceneManager.LoadScene(2);
+
     }
 }
