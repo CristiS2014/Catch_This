@@ -13,6 +13,7 @@ public class LobbyScript : Photon.MonoBehaviour
     int levelNo = 3;
     public PhotonView phView;
     public List<string> availableSpawnPoints;
+    public Text roomName;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class LobbyScript : Photon.MonoBehaviour
         availableSpawnPoints.Add("SpawnPoint2");
         availableSpawnPoints.Add("SpawnPoint3");
         availableSpawnPoints.Add("SpawnPoint4");
+        roomName.text = PhotonNetwork.room.Name;
         if (PhotonNetwork.isMasterClient || PhotonNetwork.playerList.Length == 1)
         {
             button1.SetActive(true);
