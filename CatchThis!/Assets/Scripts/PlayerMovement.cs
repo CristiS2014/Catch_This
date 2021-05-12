@@ -7,7 +7,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     public int movementspeed = 2;
     public PhotonView phView;
     public static int bombsAvailable = 0;
-
+    public Text playerName;
     [SerializeField]
     private GameObject bombPrefab;
 
@@ -17,6 +17,15 @@ public class PlayerMovement : Photon.MonoBehaviour
         if (phView.isMine || !PhotonNetwork.connected)
         {
             bombsAvailable = 1;
+        }
+
+        if (phView.isMine)
+        {
+            playerName.text = PhotonNetwork.player.NickName;
+        } else
+        {
+            playerName.text = photonView.owner.NickName;
+            playerName.color = Color.cyan;
         }
     }
 
