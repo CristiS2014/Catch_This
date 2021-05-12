@@ -329,6 +329,7 @@ MonoBehaviour:
   movementspeed: 2
   phView: {fileID: 8904535804495902109}
   playerName: {fileID: 1438765563}
+  sr: {fileID: 5865055824141912790}
   bombPrefab: {fileID: 2501492230925885353, guid: dd14830094a59b649882f222f4be61d9,
     type: 3}
 --- !u!114 &8904535804495902109
@@ -470,7 +471,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsWalkingSide
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsWalkingDown
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsWalkingUp
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
