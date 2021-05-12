@@ -49,13 +49,15 @@ public class PlayerMovement : Photon.MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * movementspeed * Time.deltaTime);
-            sr.flipX = false;
+            //sr.flipX = false;
+            phView.RPC("FlipFalse", PhotonTargets.All);
             animator.SetBool("IsWalkingSide", true);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * movementspeed * Time.deltaTime);
-            sr.flipX = true;
+            //sr.flipX = true;
+            phView.RPC("FlipTrue", PhotonTargets.All);
             animator.SetBool("IsWalkingSide", true);
         }
         else animator.SetBool("IsWalkingSide", false);
@@ -84,5 +86,17 @@ public class PlayerMovement : Photon.MonoBehaviour
     void DropBomb()
     {
         Instantiate(bombPrefab, this.gameObject.transform.position, Quaternion.identity);
+    }
+
+    [PunRPC]
+    private void FlipTrue()
+    {
+        sr.flipX = true;
+    }
+
+    [PunRPC]
+    private void FlipFalse()
+    {
+        sr.flipX = false;
     }
 }

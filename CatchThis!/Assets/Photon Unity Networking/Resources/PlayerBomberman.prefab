@@ -378,7 +378,7 @@ MonoBehaviour:
     TeleportIfDistanceGreaterThan: 3
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 3
+    InterpolateLerpSpeed: 5
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -473,13 +473,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: IsWalkingSide
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: IsWalkingDown
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: IsWalkingUp
   m_SynchronizeLayers:
   - SynchronizeType: 0

@@ -45,4 +45,6 @@ MonoBehaviour:
   - TaggedPlayer
   - LoadLevel
   - SetSpawnPoint
+  - FlipFalse
+  - FlipTrue
   DisableAutoOpenWizard: 1
