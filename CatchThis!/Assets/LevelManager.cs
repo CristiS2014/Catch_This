@@ -8,7 +8,8 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        SpawnPlayer();
+        //SpawnPlayer();
+        Invoke("SpawnPlayer", 2);
     }
     public void SpawnPlayer()
     {
