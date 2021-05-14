@@ -78,14 +78,16 @@ public class PlayerMovement : Photon.MonoBehaviour
 
         if (Input.GetKeyDown("space") && bombsAvailable > 0)
         {
-            DropBomb();
+            //DropBomb(this.gameObject.transform.position);
+            phView.RPC("DropBomb", PhotonTargets.All, this.gameObject.transform.position);
             bombsAvailable--;
         }
     }
 
-    void DropBomb()
+    [PunRPC]
+    void DropBomb(Vector3 bombPosition)
     {
-        Instantiate(bombPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(bombPrefab, bombPosition, Quaternion.identity);
     }
 
     [PunRPC]
