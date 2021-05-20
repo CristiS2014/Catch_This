@@ -87,7 +87,11 @@ public class PlayerMovement : Photon.MonoBehaviour
     [PunRPC]
     void DropBomb(Vector3 bombPosition)
     {
-        Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+        if (PhotonNetwork.isMasterClient || PhotonNetwork.playerList.Length == 1)
+        {
+            //PhotonNetwork.Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+            PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
+        }
     }
 
     [PunRPC]
