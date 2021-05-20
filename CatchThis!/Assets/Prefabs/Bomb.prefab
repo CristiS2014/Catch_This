@@ -151,6 +151,10 @@ MonoBehaviour:
     type: 3}
   explosionRange: 4
   explosionDuration: 2
+  SpeedPower: {fileID: 829596078064413897, guid: d2f64015c6ef0e04cb0e4d486be17ef0,
+    type: 3}
+  BombsPower: {fileID: 1292802026504738547, guid: 14d7d5e88a7dbee4db505b1a6148cea3,
+    type: 3}
 --- !u!95 &2501492230925885331
 Animator:
   serializedVersion: 3

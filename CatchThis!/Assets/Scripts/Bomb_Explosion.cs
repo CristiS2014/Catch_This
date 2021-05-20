@@ -17,6 +17,15 @@ public class Bomb_Explosion : MonoBehaviour
 	[SerializeField]
 	private float explosionDuration;
 
+	[SerializeField]
+	private GameObject SpeedPower;
+
+	[SerializeField]
+	private GameObject BombsPower;
+
+	private bool canDrop = false;
+
+
 	void OnTriggerExit2D(Collider2D other)
 	{
 		this.collider2D.isTrigger = false;
@@ -37,7 +46,6 @@ public class Bomb_Explosion : MonoBehaviour
 	private void CreateExplosions(Vector2 direction)
 	{
 		ContactFilter2D contactFilter = new ContactFilter2D();
-
 		Vector2 explosionDimensions = explosionPrefab.GetComponent<SpriteRenderer>().bounds.size;
 		Vector2 explosionPosition = (Vector2)this.gameObject.transform.position + (explosionDimensions.x * direction);
 		for (int explosionIndex = 1; explosionIndex < explosionRange; explosionIndex++)
@@ -52,8 +60,17 @@ public class Bomb_Explosion : MonoBehaviour
 					foundBlockOrWall = collider.tag == "Wall" || collider.tag == "Box" || collider.tag == "Player";
 					if (collider.tag == "Box" || collider.tag == "Player")
 					{
+						if(collider.tag == "Box")
+                        {
+							var number = Random.Range(1, 6);
+							if(number == 1)
+								Instantiate(BombsPower, collider.gameObject.transform.position, Quaternion.identity);
+							else if(number == 2)
+								Instantiate(SpeedPower, collider.gameObject.transform.position, Quaternion.identity);
+						}
 						Destroy(collider.gameObject);
 					}
+
 					if (foundBlockOrWall)
 					{
 						break;
