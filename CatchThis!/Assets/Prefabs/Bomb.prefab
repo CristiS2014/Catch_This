@@ -155,6 +155,8 @@ MonoBehaviour:
     type: 3}
   BombsPower: {fileID: 1292802026504738547, guid: 14d7d5e88a7dbee4db505b1a6148cea3,
     type: 3}
+  HealthPower: {fileID: 7603166484461366546, guid: aa31f7228a804b243aec96f479c4cf08,
+    type: 3}
 --- !u!95 &2501492230925885331
 Animator:
   serializedVersion: 3

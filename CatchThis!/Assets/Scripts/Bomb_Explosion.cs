@@ -23,8 +23,8 @@ public class Bomb_Explosion : MonoBehaviour
 	[SerializeField]
 	private GameObject BombsPower;
 
-	private bool canDrop = false;
-
+	[SerializeField]
+	private GameObject HealthPower;
 
 	void OnTriggerExit2D(Collider2D other)
 	{
@@ -62,11 +62,14 @@ public class Bomb_Explosion : MonoBehaviour
 					{
 						if(collider.tag == "Box")
                         {
-							var number = Random.Range(1, 6);
-							if(number == 1)
+							var number = Random.Range(1, 15);
+							if(number == 1 || number == 2 || number == 6)
 								Instantiate(BombsPower, collider.gameObject.transform.position, Quaternion.identity);
-							else if(number == 2)
+							else if(number == 3 || number == 4 || number == 7)
 								Instantiate(SpeedPower, collider.gameObject.transform.position, Quaternion.identity);
+							else if(number == 5 || number == 8)
+								Instantiate(HealthPower, collider.gameObject.transform.position, Quaternion.identity);
+
 							Destroy(collider.gameObject);
 						}
 
