@@ -101,4 +101,12 @@ public class PlayerMovement : Photon.MonoBehaviour
     {
         sr.flipX = false;
     }
+
+    public void DestroyPlayer()
+    {
+        if (photonView.isMine)
+        {
+            PhotonNetwork.Destroy(this.gameObject);
+        }
+    }
 }
