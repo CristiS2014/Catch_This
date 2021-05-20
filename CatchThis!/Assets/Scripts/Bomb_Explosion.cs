@@ -67,13 +67,13 @@ public class Bomb_Explosion : MonoBehaviour
 								Instantiate(BombsPower, collider.gameObject.transform.position, Quaternion.identity);
 							else if(number == 2)
 								Instantiate(SpeedPower, collider.gameObject.transform.position, Quaternion.identity);
+							Destroy(collider.gameObject);
 						}
 
 						if (collider.tag == "Player")
                         {
 							collider.gameObject.GetComponent<PlayerMovement>().DestroyPlayer();
                         }
-						// Destroy(collider.gameObject);
 					}
 
 					if (foundBlockOrWall)
