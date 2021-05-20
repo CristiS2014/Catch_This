@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1681728811100553851}
   m_Layer: 0
   m_Name: BomwP
-  m_TagString: Untagged
+  m_TagString: BombsPower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
