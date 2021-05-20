@@ -48,4 +48,5 @@ MonoBehaviour:
   - FlipFalse
   - FlipTrue
   - DropBomb
+  - SpawnPowerUp
   DisableAutoOpenWizard: 1

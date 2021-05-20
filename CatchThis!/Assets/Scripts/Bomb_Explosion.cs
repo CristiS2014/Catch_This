@@ -62,13 +62,23 @@ public class Bomb_Explosion : MonoBehaviour
 					{
 						if(collider.tag == "Box")
                         {
+							if (!PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length > 1)
+                            {
+								Destroy(collider.gameObject);
+								continue;
+                            }
+							Debug.Log("Here");
+							PhotonView phView = GameObject.Find("Level Manager").GetComponent<PhotonView>();
 							var number = Random.Range(1, 15);
-							if(number == 1 || number == 2 || number == 6)
-								Instantiate(BombsPower, collider.gameObject.transform.position, Quaternion.identity);
-							else if(number == 3 || number == 4 || number == 7)
-								Instantiate(SpeedPower, collider.gameObject.transform.position, Quaternion.identity);
-							else if(number == 5 || number == 8)
-								Instantiate(HealthPower, collider.gameObject.transform.position, Quaternion.identity);
+							if (number == 1 || number == 2 || number == 6)
+								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 1);
+							//Instantiate(BombsPower, collider.gameObject.transform.position, Quaternion.identity);
+							else if (number == 3 || number == 4 || number == 7)
+								//Instantiate(SpeedPower, collider.gameObject.transform.position, Quaternion.identity);
+								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 2);
+							else if (number == 5 || number == 8)
+								//Instantiate(HealthPower, collider.gameObject.transform.position, Quaternion.identity);
+								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 3);
 
 							Destroy(collider.gameObject);
 						}
