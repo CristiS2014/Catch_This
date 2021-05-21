@@ -69,7 +69,7 @@ public class Bomb_Explosion : MonoBehaviour
                         {
 							if (!PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length > 1)
                             {
-								Destroy(collider.gameObject);
+								//Destroy(collider.gameObject);
 								continue;
                             }
 							Debug.Log("Here");
@@ -85,7 +85,8 @@ public class Bomb_Explosion : MonoBehaviour
 								//Instantiate(HealthPower, collider.gameObject.transform.position, Quaternion.identity);
 								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 3);
 
-							Destroy(collider.gameObject);
+							//Destroy(collider.gameObject);
+							PhotonNetwork.Destroy(collider.gameObject);
 						}
 
 						if (collider.tag == "Player")
