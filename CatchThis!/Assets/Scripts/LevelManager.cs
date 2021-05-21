@@ -38,4 +38,10 @@ public class LevelManager : MonoBehaviour
             PhotonNetwork.Instantiate("pills", new Vector3(location.position.x, location.position.y, 0), Quaternion.identity, 0);
         }
     }
+
+    [PunRPC]
+    public void DestroyCrate(int viewId)
+    {
+        GameObject.Destroy(PhotonView.Find(viewId).gameObject);
+    }
 }

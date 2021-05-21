@@ -86,7 +86,7 @@ public class Bomb_Explosion : MonoBehaviour
 								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 3);
 
 							//Destroy(collider.gameObject);
-							PhotonNetwork.Destroy(collider.gameObject);
+							phView.RPC("DestroyCrate", PhotonTargets.AllViaServer, collider.gameObject.GetComponent<PhotonView>().viewID);
 						}
 
 						if (collider.tag == "Player")
