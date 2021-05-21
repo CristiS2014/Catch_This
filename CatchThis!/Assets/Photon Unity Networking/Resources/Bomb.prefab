@@ -159,6 +159,8 @@ MonoBehaviour:
   HealthPower: {fileID: 7603166484461366546, guid: aa31f7228a804b243aec96f479c4cf08,
     type: 3}
   phView: {fileID: -1357808192711935364}
+  lvlManager: {fileID: 186023445259939186, guid: 81f92e9b4f3a891478cd2c3bdfcb0aea,
+    type: 3}
 --- !u!95 &2501492230925885331
 Animator:
   serializedVersion: 3

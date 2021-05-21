@@ -28,6 +28,9 @@ public class Bomb_Explosion : MonoBehaviour
 
 	public PhotonView phView;
 
+	public GameObject lvlManager;
+
+	public int playerId;
 	void OnTriggerExit2D(Collider2D other)
 	{
 		this.collider2D.isTrigger = false;
@@ -41,11 +44,15 @@ public class Bomb_Explosion : MonoBehaviour
 		CreateExplosions(Vector2.right);
 		CreateExplosions(Vector2.up);
 		CreateExplosions(Vector2.down);
-		if (phView.isMine)
-		{
-			PlayerMovement.bombsAvailable++;
-			PhotonNetwork.Destroy(this.gameObject);
-		}
+		//if (phView.isMine)
+		//{
+		//	PlayerMovement.bombsAvailable++;
+		//	PhotonNetwork.Destroy(this.gameObject);
+		//}
+		//Debug.Log(playerId);
+		//lvlManager.GetComponent<PhotonView>().RPC("IncreaseBomb", PhotonView.Find(playerId).owner);
+		//PlayerMovement.bombsAvailable++;
+		Destroy(this.gameObject);
 	}
 
 	private void CreateExplosions(Vector2 direction)
@@ -86,7 +93,7 @@ public class Bomb_Explosion : MonoBehaviour
 								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 3);
 
 							//Destroy(collider.gameObject);
-							phView.RPC("DestroyCrate", PhotonTargets.AllViaServer, collider.gameObject.GetComponent<PhotonView>().viewID);
+							phView.RPC("DestroyCrate", PhotonTargets.All, collider.gameObject.GetComponent<PhotonView>().viewID);
 						}
 
 						if (collider.tag == "Player")

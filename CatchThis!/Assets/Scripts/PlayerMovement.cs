@@ -79,21 +79,30 @@ public class PlayerMovement : Photon.MonoBehaviour
         if (Input.GetKeyDown("space") && bombsAvailable > 0)
         {
             //DropBomb(this.gameObject.transform.position);
-            //phView.RPC("DropBomb", PhotonTargets.All, this.gameObject.transform.position);
-            Vector3 bombPosition = this.gameObject.transform.position;
-            PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
+            phView.RPC("DropBomb", PhotonTargets.All, this.gameObject.transform.position, phView.viewID);
+            //Vector3 bombPosition = this.gameObject.transform.position;
+            //PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
             bombsAvailable--;
+            StartCoroutine(AddBomb(1));
         }
     }
 
-    [PunRPC]
-    void DropBomb(Vector3 bombPosition)
+    IEnumerator AddBomb(int sec)
     {
-        if (PhotonNetwork.isMasterClient || PhotonNetwork.playerList.Length == 1)
-        {
-            //PhotonNetwork.Instantiate(bombPrefab, bombPosition, Quaternion.identity);
-            PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
-        }
+        yield return new WaitForSeconds(sec);
+        bombsAvailable++;
+    }
+
+    [PunRPC]
+    void DropBomb(Vector3 bombPosition, int playerId)
+    {
+        //if (PhotonNetwork.isMasterClient || PhotonNetwork.playerList.Length == 1)
+        //{
+        //PhotonNetwork.Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+        //    PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
+        //}
+        GameObject bomb = Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+        bomb.GetComponent<Bomb_Explosion>().playerId = playerId;
     }
 
     [PunRPC]
@@ -101,6 +110,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     {
         sr.flipX = true;
     }
+
 
     [PunRPC]
     private void FlipFalse()

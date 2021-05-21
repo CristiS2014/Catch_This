@@ -50,4 +50,6 @@ MonoBehaviour:
   - DropBomb
   - SpawnPowerUp
   - DestroyCrate
+  - SpawnExplosion
+  - IncreaseBomb
   DisableAutoOpenWizard: 1

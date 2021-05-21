@@ -29368,6 +29368,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 186023445259939187, guid: 81f92e9b4f3a891478cd2c3bdfcb0aea,
+        type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 5337157279430461527, guid: 8f1015c819232e84185456223165d47a,
+        type: 3}
     - target: {fileID: 186023445259939188, guid: 81f92e9b4f3a891478cd2c3bdfcb0aea,
         type: 3}
       propertyPath: m_LocalPosition.x

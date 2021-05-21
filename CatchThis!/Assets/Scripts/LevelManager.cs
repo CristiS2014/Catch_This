@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameObject playerPrefab;
-
+    public GameObject explosionPrefab;
     private void Awake()
     {
         //SpawnPlayer();
@@ -43,5 +43,18 @@ public class LevelManager : MonoBehaviour
     public void DestroyCrate(int viewId)
     {
         GameObject.Destroy(PhotonView.Find(viewId).gameObject);
+    }
+
+    [PunRPC]
+    public void SpawnExplosion(Vector2 position, float duration)
+    {
+        GameObject explosion = Instantiate(explosionPrefab, position, Quaternion.identity) as GameObject;
+        Destroy(explosion, duration);
+    }
+
+    [PunRPC]
+    public void IncreaseBomb()
+    {
+        PlayerMovement.bombsAvailable++;
     }
 }
