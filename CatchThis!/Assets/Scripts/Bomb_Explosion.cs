@@ -26,6 +26,8 @@ public class Bomb_Explosion : MonoBehaviour
 	[SerializeField]
 	private GameObject HealthPower;
 
+	public PhotonView phView;
+
 	void OnTriggerExit2D(Collider2D other)
 	{
 		this.collider2D.isTrigger = false;
@@ -39,8 +41,11 @@ public class Bomb_Explosion : MonoBehaviour
 		CreateExplosions(Vector2.right);
 		CreateExplosions(Vector2.up);
 		CreateExplosions(Vector2.down);
-		PlayerMovement.bombsAvailable++;
-		Destroy(this.gameObject);
+		if (phView.isMine)
+		{
+			PlayerMovement.bombsAvailable++;
+			PhotonNetwork.Destroy(this.gameObject);
+		}
 	}
 
 	private void CreateExplosions(Vector2 direction)
