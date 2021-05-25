@@ -23,19 +23,19 @@ public class LevelManager : MonoBehaviour
     }
 
     [PunRPC]
-    public void SpawnPowerUp(Transform location, int type)
+    public void SpawnPowerUp(Vector2 location, int type)
     {
         if (type == 1)
         {
-            PhotonNetwork.Instantiate("BomwP", new Vector3(location.position.x, location.position.y, 0), Quaternion.identity, 0);
+            PhotonNetwork.Instantiate("BomwP", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
         }
         else if (type == 2)
         {
-            PhotonNetwork.Instantiate("Speed", new Vector3(location.position.x, location.position.y, 0), Quaternion.identity, 0);
+            PhotonNetwork.Instantiate("Speed", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
         }
         else if (type == 3)
         {
-            PhotonNetwork.Instantiate("pills", new Vector3(location.position.x, location.position.y, 0), Quaternion.identity, 0);
+            PhotonNetwork.Instantiate("pills", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
         }
     }
 

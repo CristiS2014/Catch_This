@@ -87,14 +87,14 @@ public class Bomb_Explosion : MonoBehaviour
 							PhotonView phView = GameObject.Find("Level Manager").GetComponent<PhotonView>();
 							var number = Random.Range(1, 15);
 							if (number == 1 || number == 2 || number == 6)
-								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 1);
+								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, new Vector2(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y), 1);
 							//Instantiate(BombsPower, collider.gameObject.transform.position, Quaternion.identity);
 							else if (number == 3 || number == 4 || number == 7)
 								//Instantiate(SpeedPower, collider.gameObject.transform.position, Quaternion.identity);
-								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 2);
+								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, new Vector2(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y), 2);
 							else if (number == 5 || number == 8)
 								//Instantiate(HealthPower, collider.gameObject.transform.position, Quaternion.identity);
-								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, collider.gameObject.transform, 3);
+								phView.RPC("SpawnPowerUp", PhotonTargets.MasterClient, new Vector2(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y), 3);
 
 							//Destroy(collider.gameObject);
 							phView.RPC("DestroyCrate", PhotonTargets.All, collider.gameObject.GetComponent<PhotonView>().viewID);
