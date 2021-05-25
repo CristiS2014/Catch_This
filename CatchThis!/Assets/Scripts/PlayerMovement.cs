@@ -10,6 +10,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     public Text playerName;
     public SpriteRenderer sr;
     public int health;
+    private float speedScaling = 0.4f;
 
     [SerializeField]
     private GameObject bombPrefab;
@@ -123,10 +124,15 @@ public class PlayerMovement : Photon.MonoBehaviour
         health++;
     }
 
+    public void MoreBombs()
+    {
+        bombsAvailable++;
+    }
+
     public void IncreaseSpeed()
     {
-        movementspeed += 0.2f;
-        animator.speed += 0.2f;
+        movementspeed += speedScaling;
+        animator.speed += speedScaling;
     }
 
     [PunRPC]
