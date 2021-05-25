@@ -102,7 +102,9 @@ public class Bomb_Explosion : MonoBehaviour
 
 						if (collider.tag == "Player")
                         {
-							collider.gameObject.GetComponent<PlayerMovement>().DestroyPlayer();
+							collider.gameObject.GetComponent<PlayerMovement>().DecreaseHealth();
+							if(collider.gameObject.GetComponent<PlayerMovement>().health < 1)
+								collider.gameObject.GetComponent<PlayerMovement>().DestroyPlayer();
                         }
 					}
 

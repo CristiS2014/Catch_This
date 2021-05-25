@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerMovement : Photon.MonoBehaviour
 {
-    public int movementspeed = 2;
+    public float movementspeed = 2;
     public PhotonView phView;
     public static int bombsAvailable = 0;
     public Text playerName;
     public SpriteRenderer sr;
+    public int health;
 
     [SerializeField]
     private GameObject bombPrefab;
@@ -23,6 +24,7 @@ public class PlayerMovement : Photon.MonoBehaviour
         if (phView.isMine || !PhotonNetwork.connected)
         {
             bombsAvailable = 1;
+            health = 1;
         }
 
         if (phView.isMine)
@@ -111,6 +113,21 @@ public class PlayerMovement : Photon.MonoBehaviour
         sr.flipX = true;
     }
 
+    public void DecreaseHealth()
+    {
+        health--;
+    }
+
+    public void IncreaseHealth()
+    {
+        health++;
+    }
+
+    public void IncreaseSpeed()
+    {
+        movementspeed += 0.2f;
+        animator.speed += 0.2f;
+    }
 
     [PunRPC]
     private void FlipFalse()
