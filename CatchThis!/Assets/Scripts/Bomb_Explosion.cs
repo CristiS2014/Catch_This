@@ -30,7 +30,7 @@ public class Bomb_Explosion : MonoBehaviour
 
 	public GameObject lvlManager;
 
-	public int playerId;
+	public int playerActorId;
 	void OnTriggerExit2D(Collider2D other)
 	{
 		this.collider2D.isTrigger = false;
@@ -74,11 +74,15 @@ public class Bomb_Explosion : MonoBehaviour
 					{
 						if(collider.tag == "Box")
                         {
-							if (!PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length > 1)
+							if (!(PhotonNetwork.player.ID == playerActorId) && PhotonNetwork.playerList.Length > 1)
                             {
-								//Destroy(collider.gameObject);
 								continue;
                             }
+							//if (!PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length > 1)
+                            //{
+								//Destroy(collider.gameObject);
+							//	continue;
+                            //}
 							Debug.Log("Here");
 							PhotonView phView = GameObject.Find("Level Manager").GetComponent<PhotonView>();
 							var number = Random.Range(1, 15);

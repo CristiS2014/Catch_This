@@ -79,7 +79,7 @@ public class PlayerMovement : Photon.MonoBehaviour
         if (Input.GetKeyDown("space") && bombsAvailable > 0)
         {
             //DropBomb(this.gameObject.transform.position);
-            phView.RPC("DropBomb", PhotonTargets.All, this.gameObject.transform.position, phView.viewID);
+            phView.RPC("DropBomb", PhotonTargets.All, this.gameObject.transform.position, PhotonNetwork.player.ID);
             //Vector3 bombPosition = this.gameObject.transform.position;
             //PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
             bombsAvailable--;
@@ -102,7 +102,7 @@ public class PlayerMovement : Photon.MonoBehaviour
         //    PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
         //}
         GameObject bomb = Instantiate(bombPrefab, bombPosition, Quaternion.identity);
-        bomb.GetComponent<Bomb_Explosion>().playerId = playerId;
+        bomb.GetComponent<Bomb_Explosion>().playerActorId = playerId;
     }
 
     [PunRPC]
