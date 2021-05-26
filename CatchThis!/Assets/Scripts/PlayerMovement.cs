@@ -11,6 +11,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     public SpriteRenderer sr;
     public int health;
     private float speedScaling = 0.4f;
+    private bool isPaused;
 
     [SerializeField]
     private GameObject bombPrefab;
@@ -36,6 +37,7 @@ public class PlayerMovement : Photon.MonoBehaviour
             playerName.text = photonView.owner.NickName;
             playerName.color = Color.cyan;
         }
+        isPaused = false;
     }
 
     // Update is called once per frame
@@ -87,6 +89,21 @@ public class PlayerMovement : Photon.MonoBehaviour
             //PhotonNetwork.Instantiate("Bomb", new Vector3(bombPosition.x, bombPosition.y, 0), Quaternion.identity, 0);
             bombsAvailable--;
             StartCoroutine(AddBomb(1));
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Time.timeScale = 1f;
+                isPaused = false;
+                GameObject.Find("GameCanvas").transform.Find("PauseMenu").gameObject.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                isPaused = true;
+                GameObject.Find("GameCanvas").transform.Find("PauseMenu").gameObject.SetActive(true);
+            }
         }
     }
 

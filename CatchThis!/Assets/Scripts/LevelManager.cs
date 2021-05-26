@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class LevelManager : MonoBehaviour
                                               spawnPointLocation.position.y,
                                               0),
                                   Quaternion.identity, 0);
+    }
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 
     [PunRPC]
