@@ -24,6 +24,11 @@ public class LevelManager : MonoBehaviour
     }
     public void QuitToMenu()
     {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public void OnLeftRoom()
+    {
         SceneManager.LoadScene(1);
     }
 
