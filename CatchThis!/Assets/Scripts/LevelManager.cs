@@ -11,6 +11,29 @@ public class LevelManager : MonoBehaviour
     public GameObject bombPowerPrefab;
     public GameObject speedPowerPrefab;
     public GameObject healthPowerPrefab;
+    private bool isPaused;
+
+    void Start()
+    {
+        isPaused = false;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                isPaused = false;
+                GameObject.Find("GameCanvas").transform.Find("PauseMenu").gameObject.SetActive(false);
+            }
+            else
+            {
+                isPaused = true;
+                GameObject.Find("GameCanvas").transform.Find("PauseMenu").gameObject.SetActive(true);
+            }
+        }
+    }
+
     private void Awake()
     {
         //SpawnPlayer();
