@@ -6,7 +6,8 @@ public class PlayerMovement : Photon.MonoBehaviour
 {
     public float movementspeed = 2;
     public PhotonView phView;
-    public static int bombsAvailable = 0;
+    //public int static bombsAvailable = 0;
+    public int bombsAvailable = 0;
     public Text playerName;
     public SpriteRenderer sr;
     public int health;
@@ -121,7 +122,10 @@ public class PlayerMovement : Photon.MonoBehaviour
 
     public void IncreaseHealth()
     {
+        if (health == 3)
+            return;
         health++;
+        
     }
 
     public void MoreBombs()

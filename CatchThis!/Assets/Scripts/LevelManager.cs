@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
     [PunRPC]
     public void IncreaseBomb()
     {
-        PlayerMovement.bombsAvailable++;
+        // PlayerMovement.bombsAvailable++;
+        Debug.Log("This shouldn't be called!!!");
     }
 }
