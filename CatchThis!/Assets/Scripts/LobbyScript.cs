@@ -105,6 +105,11 @@ public class LobbyScript : Photon.MonoBehaviour
         //SceneManager.UnloadSceneAsync("Lobby");
         Debug.Log("Left Room");
         PhotonNetwork.LeaveRoom();
+        //SceneManager.LoadScene(1);
+    }
+
+    public void OnLeftRoom()
+    {
         SceneManager.LoadScene(1);
     }
 }
