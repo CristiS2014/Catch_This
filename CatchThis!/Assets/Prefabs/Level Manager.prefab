@@ -47,6 +47,12 @@ MonoBehaviour:
   playerPrefab: {fileID: 5865055824141912778, guid: 304a65e0d3ba716429686a7a10cde7e8,
     type: 3}
   explosionPrefab: {fileID: 0}
+  bombPowerPrefab: {fileID: 1292802026504738547, guid: 14d7d5e88a7dbee4db505b1a6148cea3,
+    type: 3}
+  speedPowerPrefab: {fileID: 829596078064413897, guid: d2f64015c6ef0e04cb0e4d486be17ef0,
+    type: 3}
+  healthPowerPrefab: {fileID: 7603166484461366546, guid: aa31f7228a804b243aec96f479c4cf08,
+    type: 3}
 --- !u!114 &-6460744888217371836
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,10 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject explosionPrefab;
+
+    public GameObject bombPowerPrefab;
+    public GameObject speedPowerPrefab;
+    public GameObject healthPowerPrefab;
     private void Awake()
     {
         //SpawnPlayer();
@@ -35,6 +39,7 @@ public class LevelManager : MonoBehaviour
     [PunRPC]
     public void SpawnPowerUp(Vector2 location, int type)
     {
+        /*
         if (type == 1)
         {
             PhotonNetwork.Instantiate("BomwP", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
@@ -46,6 +51,19 @@ public class LevelManager : MonoBehaviour
         else if (type == 3)
         {
             PhotonNetwork.Instantiate("pills", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
+        }
+        */
+        if (type == 1)
+        {
+            Instantiate(bombPowerPrefab, new Vector3(location.x, location.y, 0), Quaternion.identity);
+        }
+        else if (type == 2)
+        {
+            Instantiate(speedPowerPrefab, new Vector3(location.x, location.y, 0), Quaternion.identity);
+        }
+        else if (type == 3)
+        {
+            Instantiate(healthPowerPrefab, new Vector3(location.x, location.y, 0), Quaternion.identity);
         }
     }
 
