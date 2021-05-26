@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2823788972462681821}
   - component: {fileID: 6228015970536465469}
   - component: {fileID: 4338658270943144104}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 6944066515117692050}
   - component: {fileID: 6299085035343402025}
   - component: {fileID: 2877473372314596450}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PauseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 8384108030216975389}
   - component: {fileID: 8316242763311221786}
   - component: {fileID: 8882803328585168953}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 289224668235771111}
   - component: {fileID: 8518352591551641308}
   - component: {fileID: 6498429482818473625}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PauseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3106929016650772682}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 9011600834995791006}
   - component: {fileID: 8431532214335692559}
   - component: {fileID: 8334989035529839586}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 4622042349454483589}
   - component: {fileID: 566435342986711240}
   - component: {fileID: 1759096434080171170}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 9125234965152725870}
   - component: {fileID: 7767153442070151450}
   - component: {fileID: 2452953928261502525}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4927745598051728784}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 3126488569335811109}
   - component: {fileID: 4123430101070884413}
   - component: {fileID: 5262782681227292759}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 2363834753016263529}
   - component: {fileID: 1558361730583119390}
   - component: {fileID: 1648271907168171416}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

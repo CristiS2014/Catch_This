@@ -95,13 +95,11 @@ public class PlayerMovement : Photon.MonoBehaviour
         {
             if (isPaused)
             {
-                Time.timeScale = 1f;
                 isPaused = false;
                 GameObject.Find("GameCanvas").transform.Find("PauseMenu").gameObject.SetActive(false);
             }
             else
             {
-                Time.timeScale = 0f;
                 isPaused = true;
                 GameObject.Find("GameCanvas").transform.Find("PauseMenu").gameObject.SetActive(true);
             }
