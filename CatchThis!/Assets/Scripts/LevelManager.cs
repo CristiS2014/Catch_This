@@ -43,11 +43,12 @@ public class LevelManager : MonoBehaviour
     {
         Transform spawnPointLocation = GameObject.Find(GameInfo.spawnPointName).transform;
 
-        PhotonNetwork.Instantiate(playerPrefab.name,
+        GameObject currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name,
                                   new Vector3(spawnPointLocation.position.x,
                                               spawnPointLocation.position.y,
                                               0),
                                   Quaternion.identity, 0);
+        currentPlayer.GetComponent<SpriteRenderer>().color = GameInfo.playerColor;
     }
     public void QuitToMenu()
     {

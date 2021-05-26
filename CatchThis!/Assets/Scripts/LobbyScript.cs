@@ -39,18 +39,22 @@ public class LobbyScript : Photon.MonoBehaviour
     public void selectCharacter1()
     {
         //MainScript.character = "Character 1";
+        GameInfo.playerColor = Color.white;
     }
     public void selectCharacter2()
     {
         //MainScript.character = "Character 2";
+        GameInfo.playerColor = Color.green;
     }
     public void selectCharacter3()
     {
         //MainScript.character = "Character 3";
+        GameInfo.playerColor = Color.yellow;
     }
     public void selectCharacter4()
     {
         //MainScript.character = "Character 4";
+        GameInfo.playerColor = Color.blue;
     }
     public void selectLevel1()
     {
