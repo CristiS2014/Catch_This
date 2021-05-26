@@ -328,8 +328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementspeed: 2
   phView: {fileID: 8904535804495902109}
+  bombsAvailable: 0
   playerName: {fileID: 1438765563}
   sr: {fileID: 5865055824141912790}
+  health: 0
   bombPrefab: {fileID: 2501492230925885353, guid: dd14830094a59b649882f222f4be61d9,
     type: 3}
 --- !u!114 &8904535804495902109
@@ -376,7 +378,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
+    InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 7
     InterpolateMoveTowardsAcceleration: 2

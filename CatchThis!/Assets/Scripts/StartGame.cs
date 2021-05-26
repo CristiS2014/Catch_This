@@ -36,6 +36,6 @@ public class StartGame : MonoBehaviour
 
     private void OnDisconnected()
     {
-        // TODO -> daca mesaj eroare daca nu ma pot conecta la sv (ex nu am net)
+        //daca mesaj eroare daca nu ma pot conecta la sv (ex nu am net)
     }
 }

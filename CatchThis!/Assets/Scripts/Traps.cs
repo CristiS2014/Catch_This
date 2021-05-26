@@ -30,7 +30,7 @@ public class Traps : MonoBehaviour
 
     }
     
-    IEnumerator TrapReactivate(int sec)
+    IEnumerator TrapReactivate(float sec)
     {
         yield return new WaitForSeconds(sec);
         animator.SetBool("activate", false);
