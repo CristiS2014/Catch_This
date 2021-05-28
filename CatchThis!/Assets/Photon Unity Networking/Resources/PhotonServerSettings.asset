@@ -52,4 +52,5 @@ MonoBehaviour:
   - DestroyCrate
   - SpawnExplosion
   - IncreaseBomb
+  - TriggerTrapAnimation
   DisableAutoOpenWizard: 1

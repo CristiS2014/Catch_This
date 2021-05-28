@@ -7,6 +7,7 @@ public class Traps : MonoBehaviour
 
     Animator animator;
     private bool isTriggered;
+    public PhotonView phView;
 
     void Start()
     {
@@ -18,18 +19,28 @@ public class Traps : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" && isTriggered == false)
         {
-            animator.SetBool("activate", true);
-            isTriggered = true;
+            //animator.SetBool("activate", true);
+            //isTriggered = true;
             col.gameObject.GetComponent<PlayerMovement>().DecreaseHealth();
             
             if (col.gameObject.GetComponent<PlayerMovement>().health < 1)
                 col.gameObject.GetComponent<PlayerMovement>().DestroyPlayer();
-            
-            StartCoroutine(TrapReactivate(1));
+
+            //StartCoroutine(TrapReactivate(1));
+            phView.RPC("TriggerTrapAnimation", PhotonTargets.All);
+
         }
 
     }
     
+    [PunRPC]
+    public void TriggerTrapAnimation()
+    {
+        animator.SetBool("activate", true);
+        isTriggered = true;
+
+        StartCoroutine(TrapReactivate(1));
+    }
     IEnumerator TrapReactivate(float sec)
     {
         yield return new WaitForSeconds(sec);

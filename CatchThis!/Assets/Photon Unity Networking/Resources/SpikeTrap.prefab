@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3886065911040864134}
   - component: {fileID: 4823963048730568391}
   - component: {fileID: -4121254091729263343}
-  - component: {fileID: 2486905961743546976}
-  - component: {fileID: 722525617804602693}
+  - component: {fileID: -582147671659386085}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -118,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6397182aafcd643429118d9171d7424e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phView: {fileID: -582147671659386085}
 --- !u!61 &-4121254091729263343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +144,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7818066, y: 0.4777409}
   m_EdgeRadius: 0
---- !u!114 &2486905961743546976
+--- !u!114 &-582147671659386085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,35 +160,14 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 3
+  synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 722525617804602693}
+  - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &722525617804602693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2242752319993362751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 2
-    Name: activate
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
