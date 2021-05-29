@@ -120,8 +120,14 @@ public class LevelManager : MonoBehaviour
     [PunRPC]
     public void GivePowerUp(int playerID, int powerUpID, int powerUpType)
     {
-        GameObject powerUp = PhotonView.Find(powerUpID).gameObject;
+        PhotonView powerUpView = PhotonView.Find(powerUpID);
 
+        if (powerUpView == null)
+        {
+            return;
+        }
+
+        GameObject powerUp = powerUpView.gameObject;
         if (powerUp == null || (PhotonNetwork.isMasterClient == false && PhotonNetwork.playerList.Length > 1))
         {
             return;
