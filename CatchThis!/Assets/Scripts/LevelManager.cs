@@ -127,6 +127,12 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
+        if (PhotonView.Find(playerID) == null)
+        {
+            Debug.LogError("Not a player");
+            return;
+        }
+
         if (powerUpType == 1)
         {
             PhotonView.Find(playerID).RPC("MoreBombs", PhotonTargets.All);
