@@ -63,11 +63,7 @@ public class LevelManager : MonoBehaviour
     [PunRPC]
     public void SpawnPowerUp(Vector2 location, int type)
     {
-        if (PhotonNetwork.isMasterClient == false && PhotonNetwork.playerList.Length > 1)
-        {
-            return;
-        }
-
+        /*
         if (type == 1)
         {
             PhotonNetwork.Instantiate("BomwP", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
@@ -80,9 +76,7 @@ public class LevelManager : MonoBehaviour
         {
             PhotonNetwork.Instantiate("pills", new Vector3(location.x, location.y, 0), Quaternion.identity, 0);
         }
-      
-
-        /*
+        */
         if (type == 1)
         {
             Instantiate(bombPowerPrefab, new Vector3(location.x, location.y, 0), Quaternion.identity);
@@ -95,7 +89,6 @@ public class LevelManager : MonoBehaviour
         {
             Instantiate(healthPowerPrefab, new Vector3(location.x, location.y, 0), Quaternion.identity);
         }
-        */
     }
 
     [PunRPC]
@@ -114,37 +107,7 @@ public class LevelManager : MonoBehaviour
     [PunRPC]
     public void IncreaseBomb()
     {
+        // PlayerMovement.bombsAvailable++;
         Debug.Log("This shouldn't be called!!!");
-    }
-
-    [PunRPC]
-    public void GivePowerUp(int playerID, int powerUpID, int powerUpType)
-    {
-        GameObject powerUp = PhotonView.Find(powerUpID).gameObject;
-
-        if (powerUp == null || (PhotonNetwork.isMasterClient == false && PhotonNetwork.playerList.Length > 1))
-        {
-            return;
-        }
-
-        if (powerUpType == 1)
-        {
-            PhotonView.Find(playerID).RPC("MoreBombs", PhotonTargets.All);
-
-        } else if (powerUpType == 2)
-        {
-            PhotonView.Find(playerID).RPC("IncreaseSpeed", PhotonTargets.All);
-
-        } else if (powerUpType == 3)
-        {
-            PhotonView.Find(playerID).RPC("IncreaseHealth", PhotonTargets.All);
-
-        } else
-        {
-            Debug.LogError("Debug: PowerUp does not exist");
-        }
-
-        //PhotonView.Find(powerUpID).RPC("DestroyPowerUp", PhotonTargets.All);
-        PhotonNetwork.Destroy(PhotonView.Find(powerUpID).gameObject);
     }
 }

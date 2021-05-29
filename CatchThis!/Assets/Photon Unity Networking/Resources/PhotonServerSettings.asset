@@ -53,9 +53,4 @@ MonoBehaviour:
   - SpawnExplosion
   - IncreaseBomb
   - TriggerTrapAnimation
-  - GivePowerUp
-  - IncreaseHealth
-  - IncreaseSpeed
-  - MoreBombs
-  - DestroyPowerUp
   DisableAutoOpenWizard: 1
