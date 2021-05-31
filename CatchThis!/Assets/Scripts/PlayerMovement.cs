@@ -11,6 +11,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     public Text playerName;
     public SpriteRenderer sr;
     public int health;
+    public static int health_txt;
     private float speedScaling = 0.4f;
 
     [SerializeField]
@@ -27,6 +28,7 @@ public class PlayerMovement : Photon.MonoBehaviour
         {
             bombsAvailable = 1;
             health = 1;
+            health_txt = 1;
         }
 
         if (phView.isMine)
@@ -118,6 +120,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     public void DecreaseHealth()
     {
         health--;
+        health_txt--;
     }
 
     public void IncreaseHealth()
@@ -125,6 +128,7 @@ public class PlayerMovement : Photon.MonoBehaviour
         if (health == 3)
             return;
         health++;
+        health_txt++;
         
     }
 
