@@ -30,10 +30,16 @@ MonoBehaviour:
   RpcList:
   - Chat
   - ColorRpc
+  - DestroyCrate
   - DestroyRpc
   - DoJump
+  - DropBomb
   - Flash
+  - FlipFalse
+  - FlipTrue
+  - IncreaseBomb
   - InstantiateRpc
+  - LoadLevel
   - Marco
   - PickupItemInit
   - Polo
@@ -42,15 +48,9 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
-  - TaggedPlayer
-  - LoadLevel
   - SetSpawnPoint
-  - FlipFalse
-  - FlipTrue
-  - DropBomb
-  - SpawnPowerUp
-  - DestroyCrate
   - SpawnExplosion
-  - IncreaseBomb
+  - SpawnPowerUp
+  - TaggedPlayer
   - TriggerTrapAnimation
   DisableAutoOpenWizard: 1
