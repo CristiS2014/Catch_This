@@ -47,6 +47,11 @@ MonoBehaviour:
   playerPrefab: {fileID: 5865055824141912778, guid: 304a65e0d3ba716429686a7a10cde7e8,
     type: 3}
   explosionPrefab: {fileID: 0}
+  playerPrefabs:
+  - {fileID: 5865055824141912778, guid: 304a65e0d3ba716429686a7a10cde7e8, type: 3}
+  - {fileID: 5865055824141912778, guid: 213ad71d31cc13a46bad776bfbaa0492, type: 3}
+  - {fileID: 5865055824141912778, guid: faf858fc5dcee8c4dad1796537dcd8d7, type: 3}
+  - {fileID: 5865055824141912778, guid: 37ac27c4227410f4db80997e1cc63243, type: 3}
   bombPowerPrefab: {fileID: 1292802026504738547, guid: 14d7d5e88a7dbee4db505b1a6148cea3,
     type: 3}
   speedPowerPrefab: {fileID: 829596078064413897, guid: d2f64015c6ef0e04cb0e4d486be17ef0,

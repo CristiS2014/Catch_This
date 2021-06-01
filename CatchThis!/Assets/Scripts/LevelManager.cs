@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject explosionPrefab;
-
+    public GameObject[] playerPrefabs;
     public GameObject bombPowerPrefab;
     public GameObject speedPowerPrefab;
     public GameObject healthPowerPrefab;
@@ -42,13 +42,12 @@ public class LevelManager : MonoBehaviour
     public void SpawnPlayer()
     {
         Transform spawnPointLocation = GameObject.Find(GameInfo.spawnPointName).transform;
-
-        GameObject currentPlayer = PhotonNetwork.Instantiate(playerPrefab.name,
+        GameObject currentPlayerPrefab = playerPrefabs[GameInfo.prefabNumber];
+        GameObject currentPlayer = PhotonNetwork.Instantiate(currentPlayerPrefab.name,
                                   new Vector3(spawnPointLocation.position.x,
                                               spawnPointLocation.position.y,
                                               0),
                                   Quaternion.identity, 0);
-        currentPlayer.GetComponent<SpriteRenderer>().color = GameInfo.playerColor;
     }
     public void QuitToMenu()
     {
