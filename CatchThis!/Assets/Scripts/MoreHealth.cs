@@ -8,6 +8,7 @@ public class MoreHealth : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            GameObject.Find("Sounds").GetComponent<PlaySounds>().PlayPickupSound();
             col.gameObject.GetComponent<PlayerMovement>().IncreaseHealth();
             Debug.Log("Bau");
             Destroy(this.gameObject);

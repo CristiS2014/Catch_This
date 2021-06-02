@@ -31,7 +31,15 @@ public class Bomb_Explosion : MonoBehaviour
 	public GameObject lvlManager;
 
 	public int playerActorId;
-	void OnTriggerExit2D(Collider2D other)
+
+	AudioSource audioSource;
+
+    private void Awake()
+    {
+		audioSource = GetComponent<AudioSource>();
+	}
+
+    void OnTriggerExit2D(Collider2D other)
 	{
 		this.collider2D.isTrigger = false;
 	}
@@ -52,6 +60,8 @@ public class Bomb_Explosion : MonoBehaviour
 		//Debug.Log(playerId);
 		//lvlManager.GetComponent<PhotonView>().RPC("IncreaseBomb", PhotonView.Find(playerId).owner);
 		//PlayerMovement.bombsAvailable++;
+		//GameInfo.PlayBombExplosion();
+		GameObject.Find("Sounds").GetComponent<PlaySounds>().PlayBombExplosion();
 		Destroy(this.gameObject);
 	}
 

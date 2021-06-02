@@ -31,6 +31,7 @@ public class StartGame : MonoBehaviour
         PhotonNetwork.JoinLobby(TypedLobby.Default);
         PhotonNetwork.playerName = "";
         Debug.Log("Connected to master");
+        GameObject.FindGameObjectWithTag("Music").GetComponent<PlayMenuMusic>().PlayMusic();
         SceneManager.LoadScene(1);
     }
 

@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour
 
     public void OnLeftRoom()
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<PlayMenuMusic>().PlayMusic();
         SceneManager.LoadScene(1);
     }
 

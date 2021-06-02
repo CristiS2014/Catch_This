@@ -80,6 +80,7 @@ public class NetworkMaster : Photon.PunBehaviour
     [PunRPC]
     public void LoadLevel(int levelNo)
     {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<PlayMenuMusic>().StopMusic();
         SceneManager.LoadScene(levelNo);
     }
 

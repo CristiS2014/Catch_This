@@ -8,6 +8,7 @@ public class MoreBombs : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
+            GameObject.Find("Sounds").GetComponent<PlaySounds>().PlayPickupSound();
             col.gameObject.GetComponent<PlayerMovement>().MoreBombs();
             Debug.Log("Speram");
             Destroy(this.gameObject);

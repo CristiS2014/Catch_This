@@ -9,6 +9,7 @@ TagManager:
   - SpeedPower
   - BombsPower
   - HealthPower
+  - Music
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class MoreSpeed : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            GameObject.Find("Sounds").GetComponent<PlaySounds>().PlayPickupSound();
             col.gameObject.GetComponent<PlayerMovement>().IncreaseSpeed();
             Debug.Log("Haide");
             Destroy(this.gameObject);

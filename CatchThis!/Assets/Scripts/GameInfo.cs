@@ -6,4 +6,5 @@ static class GameInfo
 {
     public static string spawnPointName = "";
     public static int prefabNumber = 0;
+    
 }

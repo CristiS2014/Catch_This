@@ -153,6 +153,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     {
         if (photonView.isMine)
         {
+            GameObject.Find("Sounds").GetComponent<PlaySounds>().PlayDeathSound();
             PhotonNetwork.Destroy(this.gameObject);
         }
     }
