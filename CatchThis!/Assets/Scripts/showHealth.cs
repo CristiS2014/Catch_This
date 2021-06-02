@@ -12,6 +12,9 @@ public class showHealth : MonoBehaviour
     }
     void Update()
     {
-        gameObject.GetComponent<UnityEngine.UI.Text>().text = symbol + localPlayer.GetComponent<PlayerMovement>().health;
+        if (localPlayer != null)
+            gameObject.GetComponent<UnityEngine.UI.Text>().text = symbol + localPlayer.GetComponent<PlayerMovement>().health;
+        else
+            gameObject.GetComponent<UnityEngine.UI.Text>().text = symbol + 0;
     }
 }

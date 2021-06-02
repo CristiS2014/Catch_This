@@ -33,7 +33,8 @@ public class PlayerMovement : Photon.MonoBehaviour
 
         if (phView.isMine)
         {
-            GameObject.Find("GameCanvas").GetComponentInChildren<showHealth>().localPlayer = this.gameObject;
+            GameObject.Find("GameCanvas").transform.Find("HealthShow").GetComponent<showHealth>().localPlayer = this.gameObject;
+                //GetComponentInChildren<showHealth>().localPlayer = this.gameObject;
             playerName.text = PhotonNetwork.player.NickName;
         } else
         {
@@ -154,6 +155,7 @@ public class PlayerMovement : Photon.MonoBehaviour
     {
         if (photonView.isMine)
         {
+            GameObject.Find("GameCanvas").transform.Find("HealthShow").GetComponent<showHealth>().localPlayer = null;
             GameObject.Find("Sounds").GetComponent<PlaySounds>().PlayDeathSound();
             PhotonNetwork.Destroy(this.gameObject);
         }
