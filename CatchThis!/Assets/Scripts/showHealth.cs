@@ -5,12 +5,13 @@ using UnityEngine;
 public class showHealth : MonoBehaviour
 {
     private string symbol;
+    public GameObject localPlayer;
     void Start()
     {
-       symbol =  gameObject.GetComponent<UnityEngine.UI.Text>().text;
+        symbol = gameObject.GetComponent<UnityEngine.UI.Text>().text;
     }
     void Update()
     {
-        gameObject.GetComponent<UnityEngine.UI.Text>().text = symbol + PlayerMovement.health_txt;
+        gameObject.GetComponent<UnityEngine.UI.Text>().text = symbol + localPlayer.GetComponent<PlayerMovement>().health;
     }
 }

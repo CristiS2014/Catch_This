@@ -33,6 +33,7 @@ public class PlayerMovement : Photon.MonoBehaviour
 
         if (phView.isMine)
         {
+            GameObject.Find("GameCanvas").GetComponentInChildren<showHealth>().localPlayer = this.gameObject;
             playerName.text = PhotonNetwork.player.NickName;
         } else
         {
